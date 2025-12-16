@@ -1,0 +1,11 @@
+{
+  "max_words": 10000,
+  "max_len": 200,
+  "embedding_dim": 128,
+  "num_filters": 64,
+  "filter_sizes": [
+    3,
+    4,
+    5
+  ]
+}

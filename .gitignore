@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific - optional (uncomment if you don't want to share these)
+# models/
+# predictions.csv
+# *.csv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Model files (uncomment if models are too large)
+# *.h5
+# *.pkl
+
