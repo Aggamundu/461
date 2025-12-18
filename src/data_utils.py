@@ -33,9 +33,7 @@ class PreparedData:
         return getattr(self, f"y_{split}")
 
 
-def prepare_data(project_root: Optional[Path] = None,
-                 max_words: int = 10000,
-                 max_len: int = 200) -> PreparedData:
+def prepare_data(project_root: Optional[Path] = None, max_words: int = 10000, max_len: int = 200) -> PreparedData:
     if project_root is None:
         project_root = Path(__file__).parent.parent
 
@@ -84,16 +82,10 @@ def prepare_data(project_root: Optional[Path] = None,
 
 def evaluate_split(y_true: np.ndarray, probs: np.ndarray) -> Dict[str, float]:
     preds = (probs > 0.5).astype(int)
-    return {
-        "accuracy": accuracy_score(y_true, preds),
-        "f1": f1_score(y_true, preds, average="weighted"),
-        "predictions": preds,
-    }
+    return {"accuracy": accuracy_score(y_true, preds), "f1": f1_score(y_true, preds, average="weighted"), "predictions": preds}
 
 
-def save_tokenizer_and_params(models_dir: Path,
-                              data: PreparedData,
-                              params: Dict) -> None:
+def save_tokenizer_and_params(models_dir: Path, data: PreparedData, params: Dict) -> None:
     models_dir.mkdir(exist_ok=True)
 
     tokenizer_path = models_dir / "tokenizer.pkl"
